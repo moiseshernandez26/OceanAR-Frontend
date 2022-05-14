@@ -1,0 +1,11 @@
+.container-view-singin{
+    background-image: url('../../../public/img/Fondo-negro.png');
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
