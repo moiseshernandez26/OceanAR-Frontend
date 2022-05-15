@@ -1,12 +1,14 @@
 import { TextField, Grid, Button } from '@mui/material'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { AppContext } from '../../context/state'
 
 import { createNewAccount } from '../../services/auth.service'
 
 import './styles.css'
 
 const SignUpForm = () => {
+  const { dispatch } = useContext(AppContext)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [repeatPassword, setRepeatPassword] = useState('')
@@ -36,11 +38,11 @@ const SignUpForm = () => {
     } else {
       const data = {
         email,
-        password
+        password,
+        name: 'armando'
       }
       try {
-        const response = await createNewAccount(data)
-        console.log(response)
+        await createNewAccount(data)
         redirectLogIn()
       } catch (error) {
         console.log(error)

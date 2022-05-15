@@ -34,10 +34,19 @@ const LogInForm = () => {
       password
     }
     try {
-      const { token, user } = await logIn(data)
-      dispatch({ type: 'set-is-loggedin', isLoggedin: true })
-      dispatch({ type: 'set-token', token })
-      dispatch({ type: 'set-user', user })
+      const response = await logIn(data)
+      if (response.data) {
+        dispatch({
+          type: 'set-user',
+          user: response.data
+        })
+        dispatch({
+          type: 'set-is-loggedin',
+          isLoggedin: true
+        })
+      } else {
+        alert('Usuario o contraseña incorrectos')
+      }
       setIsLoading(false)
     } catch (error) {
       console.log(error)
