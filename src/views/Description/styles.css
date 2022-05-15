@@ -1,0 +1,9 @@
+.link-ar {
+    color: #00a0e9;
+    text-decoration: none;
+}
+.wrapper_btn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
