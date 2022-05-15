@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [react(), mkcert()],
   build: {
     assetsDir: 'static',
-    brotliSize: false // not supported in StackBlitz
+    brotliSize: false,
+    outDir: 'docs'
   }
 })
