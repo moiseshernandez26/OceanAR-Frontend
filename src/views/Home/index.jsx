@@ -4,9 +4,16 @@ import CardAR from '../../components/CardAR'
 
 import { cities } from '../../mocks/cities'
 import { useNavigate } from 'react-router-dom'
+import { AppContext } from '../../context/state'
+import { useContext } from 'react'
 
 const Home = () => {
+  const { dispatch } = useContext(AppContext)
   const navigateToPlace = (place) => {
+    dispatch({
+      type: 'set-url-map',
+      urlMap: place.urlMap
+    })
     navigate(`/animal/${place.id}`)
   }
 
