@@ -16,7 +16,7 @@ export const createNewAccount = async (data) => {
 export const logIn = async (data) => {
   try {
     const res = await server.post(
-      '/user/auth/login',
+      '/user/login',
       JSON.stringify(data), {
         headers: {
           'Content-Type': 'application/json'
