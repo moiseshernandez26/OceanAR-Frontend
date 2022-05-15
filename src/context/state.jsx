@@ -7,8 +7,7 @@ const initialState = {
   isLoggedin: false,
   token: undefined,
   user: undefined,
-  interest: true,
-  objInterest: []
+  ulrMap: undefined
 }
 
 const reducer = (state, action) => {
@@ -17,12 +16,10 @@ const reducer = (state, action) => {
       return { ...state, isLoggedin: action.isLoggedin }
     case 'set-token':
       return { ...state, token: action.token }
-    case 'set-interest':
-      return { ...state, interest: action.interest }
     case 'set-user':
       return { ...state, user: action.user }
-    case 'set-obj-interest':
-      return { ...state, objInterest: action.objInterest }
+    case 'set-url-map':
+      return { ...state, ulrMap: action.urlMap }
     default:
       return state
   }
