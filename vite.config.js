@@ -9,5 +9,6 @@ export default defineConfig({
     assetsDir: 'static',
     brotliSize: false,
     outDir: 'docs'
-  }
+  },
+  base: '/OceanAR-Frontend/'
 })
