@@ -10,13 +10,13 @@ const CardAR = ({ place, handleClick, isClicked = true }) => {
               <CardMedia
                 component='img'
                 height='140'
-                image={place.urlImage ?? ''}
-                alt={`${place.name} image`}
+                image={place.UrlImage ?? ''}
+                alt={`${place.Name} image`}
                 loading='lazy'
               />
               <CardContent>
                 <Typography gutterBottom variant='h6' component='div'>
-                  {place.name}
+                  {place.Name}
                 </Typography>
 
               </CardContent>
