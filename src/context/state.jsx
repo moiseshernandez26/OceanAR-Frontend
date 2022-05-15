@@ -7,7 +7,7 @@ const initialState = {
   isLoggedin: false,
   token: undefined,
   user: undefined,
-  ulrMap: undefined,
+  urlMap: undefined,
   idUser: undefined
 }
 
@@ -20,7 +20,7 @@ const reducer = (state, action) => {
     case 'set-user':
       return { ...state, user: action.user }
     case 'set-url-map':
-      return { ...state, ulrMap: action.urlMap }
+      return { ...state, urlMap: action.urlMap }
     case 'set-id-user':
       return { ...state, idUser: action.idUser }
     default:

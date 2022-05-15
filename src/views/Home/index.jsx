@@ -28,13 +28,12 @@ const Home = () => {
   const navigateToPlace = (place) => {
     dispatch({
       type: 'set-url-map',
-      urlMap: place.urlMap
+      urlMap: place.UrlMap
     })
     navigate(`/animal/${place.Id}`)
   }
 
   const navigate = useNavigate()
-  console.log(cities)
   return (
     <>
       {isLoading && <Loading />}

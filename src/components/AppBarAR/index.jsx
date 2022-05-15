@@ -21,10 +21,7 @@ export default function AppBarAR ({ component }) {
               aria-label='menu'
               sx={{ mr: 2 }}
               onClick={() => {
-                if (component === 'map') {
-                  navigate(-1)
-                }
-                navigate('/')
+                navigate(-1)
               }}
             >
               {component === 'home' ? <MenuIcon /> : <ArrowBackIcon />}

@@ -44,7 +44,7 @@ const Description = () => {
           <Container maxWidth='sm'>
             <div className='wrapper_btn'>
               <Button startIcon={<PreviewIcon />}>
-                <a href={`/${animal?.FileName}/index.html`} className='link-ar'>
+                <a href={`/OceanAR-Frontend/${animal?.FileName}/index.html`} className='link-ar'>
                   Preview
                 </a>
               </Button>

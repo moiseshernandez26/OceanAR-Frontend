@@ -21,7 +21,6 @@ const Animal = () => {
   }, [])
 
   const requestAnimals = async () => {
-    console.log(params)
     setIsLoading(true)
     try {
       const response = await getAnimalsByIdCityService(params.id)

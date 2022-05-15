@@ -60,7 +60,7 @@ const LogInForm = () => {
       <div className='log-in-container'>
         <form onSubmit={handleSubmit}>
           <div className='wrapper__logo'>
-            <img src='./logo_ar.png' alt='logo' className='logo' />
+            <img src='./logo_ar_1.png' alt='logo' className='logo' />
           </div>
           <Grid container spacing={2}>
             <Grid item xs={12}>

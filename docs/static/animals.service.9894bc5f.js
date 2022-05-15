@@ -1,0 +1,1 @@
+import{s as a}from"./server.9bf35674.js";const n=async e=>{try{return(await a.get(`/animal/city/${e}`,{headers:{"Content-Type":"application/json"}})).data}catch(t){throw console.log(t),t}},s=async e=>{try{return(await a.get(`/animal/${e}`,{headers:{"Content-Type":"application/json"}})).data}catch(t){throw console.log(t),t}};export{s as a,n as g};
