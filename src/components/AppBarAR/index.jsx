@@ -27,7 +27,7 @@ export default function AppBarAR ({ component }) {
               {component === 'home' ? <MenuIcon /> : <ArrowBackIcon />}
             </IconButton>
             <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-              AR Places
+              Ocean AR
             </Typography>
           </Toolbar>
         </AppBar>
