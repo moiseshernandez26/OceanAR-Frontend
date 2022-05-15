@@ -7,7 +7,8 @@ const initialState = {
   isLoggedin: false,
   token: undefined,
   user: undefined,
-  ulrMap: undefined
+  ulrMap: undefined,
+  idUser: undefined
 }
 
 const reducer = (state, action) => {
@@ -20,6 +21,8 @@ const reducer = (state, action) => {
       return { ...state, user: action.user }
     case 'set-url-map':
       return { ...state, ulrMap: action.urlMap }
+    case 'set-id-user':
+      return { ...state, idUser: action.idUser }
     default:
       return state
   }
@@ -30,7 +33,7 @@ function AppContextProvider (props) {
     ...initialState
   }
 
-  const [data, setData] = useLocalStorage('arplaces', fullInitialState)
+  const [data, setData] = useLocalStorage('oceanar', fullInitialState)
   const [state, dispatch] = useReducer(reducer, data)
   const value = { state, dispatch }
 
