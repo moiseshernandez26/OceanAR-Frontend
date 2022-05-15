@@ -8,6 +8,7 @@ import Loading from './components/Loading'
 const Home = lazy(() => import('./views/Home'))
 const SignIn = lazy(() => import('./views/SignIn'))
 const SignUp = lazy(() => import('./views/SignUp'))
+const Animal = lazy(() => import('./views/Animal'))
 
 function ARPlacesAPP () {
   const { state } = useContext(AppContext)
@@ -20,6 +21,7 @@ function ARPlacesAPP () {
             ? (
               <Routes>
                 <Route path='/home' element={<Home />} />
+                <Route path='/animal/:id' element={<Animal />} />
                 <Route path='*' element={<Home />} />
               </Routes>
               )
