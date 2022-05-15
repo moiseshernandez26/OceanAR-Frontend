@@ -3,17 +3,39 @@ import { Container, Grid, Box, Button } from '@mui/material'
 import DirectionsIcon from '@mui/icons-material/Directions'
 
 import AppBarAR from '../../components/AppBarAR'
+import { useEffect, useState } from 'react'
+
 import CardAR from '../../components/CardAR'
-import { animals } from '../../mocks/animals'
+import { getAnimalsByIdCityService } from '../../services/animals.service'
+import Loading from '../../components/Loading'
+
 const Animal = () => {
+  const [animals, setAnimals] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
+
   const params = useParams()
   const navigate = useNavigate()
 
-  const navigateToPlace = (place) => {
-    navigate(`/description/${place.id}`)
+  useEffect(() => {
+    requestAnimals()
+  }, [])
+
+  const requestAnimals = async () => {
+    console.log(params)
+    setIsLoading(true)
+    try {
+      const response = await getAnimalsByIdCityService(params.id)
+      setIsLoading(false)
+      setAnimals(response.data)
+    } catch (e) {
+      setIsLoading(false)
+      console.error(e)
+    }
   }
 
-  const animalsFiltered = animals.filter(animal => animal.idCity === +params.id)
+  const navigateToPlace = (place) => {
+    navigate(`/description/${place.Id}`)
+  }
 
   const handleClick = () => {
     navigate('/map')
@@ -21,7 +43,8 @@ const Animal = () => {
 
   return (
     <>
-      <AppBarAR component='home' />
+      {isLoading && <Loading />}
+      <AppBarAR component='animals' />
       <Container maxWidth='sm' style={{ paddingTop: '2em' }}>
         <Grid container style={{ paddingBottom: '2em' }}>
           <Grid item xs={6}>
@@ -41,7 +64,7 @@ const Animal = () => {
           </Grid>
         </Grid>
         <Grid container spacing={2}>
-          {animalsFiltered.map((city, index) => (
+          {animals.map((city, index) => (
             <CardAR key={index} place={city} handleClick={navigateToPlace} />
           ))}
         </Grid>
